@@ -1,0 +1,286 @@
+  .messenger {
+      margin-top: 60px;
+      overflow: hidden;
+
+      .back {
+          display: none;
+      }
+  }
+
+  .messenger-left {
+      width: 420px;
+      float: left;
+      border-right: 1px solid #E8E9EB;
+  }
+
+  .messenger-right {
+      width: 814px;
+      float: left;
+
+
+
+      .profile-info {
+          border-bottom: 1px solid #E8E9EB;
+
+
+          height: 80px;
+
+          padding: 16px 16px 16px 49px;
+          overflow: hidden;
+
+          .image {
+              width: 60px;
+              float: left;
+
+              img {
+                  width: 48px;
+                  height: 48px;
+                  border-radius: 30px;
+              }
+          }
+
+          .name-block {
+              width: 240px;
+              float: left;
+
+              .name {
+                  color: #444444;
+                  font-weight: 600;
+                  font-size: 14px;
+                  line-height: 19px;
+                  margin-top: 3px;
+              }
+
+              .text {
+                  color: #828282;
+                  font-size: 14px;
+                  line-height: 19px;
+                  margin-top: 4px;
+              }
+          }
+      }
+  }
+
+  .messenger-search {
+      height: 80px;
+      padding: 16px 16px 16px 0;
+
+      input {
+          background: #F6F6F6;
+          border-radius: 5px;
+          width: 100%;
+          height: 48px;
+          padding: 14px 14px 14px 56px;
+          font-size: 14px;
+          line-height: 19px;
+          border: none;
+          color: #828282;
+
+          background-image: url("/css/university-list-search.png");
+          background-repeat: no-repeat;
+          background-position: 17px 15px;
+
+      }
+
+      border-bottom: 1px solid #E8E9EB;
+  }
+
+  .messenger-profile-list {
+
+      overflow-y: scroll;
+
+      position: fixed;
+      top: 259px;
+      bottom: 60px;
+      width: 427px;
+
+  }
+
+  .messenger-profile {
+      width: 410px;
+      height: 88px;
+
+      padding: 16px;
+      border-bottom: 1px solid #E8E9EB;
+      overflow: hidden;
+
+      .image {
+          width: 72px;
+          float: left;
+
+          img {
+              width: 56px;
+              height: 56px;
+              border-radius: 30px;
+          }
+      }
+
+      .name-block {
+          width: 240px;
+          float: left;
+
+          .name {
+              color: #444444;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 19px;
+              margin-top: 5px;
+          }
+
+          .text {
+              color: #828282;
+              font-size: 14px;
+              line-height: 19px;
+              margin-top: 8px;
+              height: 19px;
+              overflow: hidden;
+          }
+      }
+
+      .stat-block {
+          float: right;
+          width: 60px;
+
+          .time {
+              font-size: 14px;
+              line-height: 19px;
+              margin-top: 5px;
+
+              text-align: right;
+              color: #828282;
+          }
+
+          .new-count {
+              background: #EA681F;
+              height: 18px;
+              color: #FFFFFF;
+              font-weight: 600;
+              font-size: 13px;
+              line-height: 18px;
+              border-radius: 20px;
+              text-align: center;
+              padding: 0 8px;
+              float: right;
+              margin-top: 9px;
+          }
+      }
+
+  }
+
+  .messenger-profile:hover {
+      cursor: pointer;
+  }
+
+  .messenger-profile.selected {
+      background: #F6F6F6;
+      border-left: 4px solid #EA681F;
+      padding-left: 12px;
+  }
+
+
+  .messages {
+      margin-left: 59px;
+      margin-top: 15px;
+      overflow-y: scroll;
+      position: fixed;
+      top: 259px;
+      bottom: 116px;
+      width: 765px;
+
+
+      .mesage-item {}
+
+      .message {
+          overflow: hidden;
+          margin-bottom: 8px;
+
+          .message-text {
+              font-size: 14px;
+              line-height: 20px;
+              margin-bottom: 8px;
+              padding: 16px;
+          }
+
+          .message-time {
+              font-size: 13px;
+              line-height: 18px;
+
+              color: #828282;
+          }
+      }
+
+      .my-message {
+          width: 500px;
+          float: right;
+
+          .message-text {
+              background: #EA681F;
+              color: #FFFFFF;
+              border-radius: 7px 7px 0px 7px;
+          }
+
+          .message-time {
+
+              text-align: right;
+
+          }
+      }
+
+      .ap-message {
+          float: left;
+
+          .message-text {
+              background: #F6F6F6;
+              width: 395px;
+              color: #444444;
+              border-radius: 5px 5px 5px 0px;
+
+          }
+      }
+
+      .message-text {}
+
+      .message-time {}
+  }
+
+  .message-box {
+      margin-left: 59px;
+      position: fixed;
+      bottom: 60px;
+      height: 56px;
+      border-top: 1px solid #F2F2F2;
+      width: 765px;
+      overflow: hidden;
+      padding-top: 16px;
+
+      .attach-icon {
+          float: left;
+          width: 23px;
+          height: 23px;
+
+          background-image: url('/css/messenger-icons.png');
+          background-position: 0 0;
+
+      }
+
+      input {
+          border: none;
+          color: #828282;
+          font-size: 14px;
+
+          width: 695px;
+          float: left;
+          line-height: 19px;
+          margin-left: 16px;
+      }
+
+      .send-btn {
+          width: 24px;
+          height: 23px;
+
+          float: right;
+          display: block;
+          background-image: url('/css/messenger-icons.png');
+          background-position: -23px 0;
+      }
+  }

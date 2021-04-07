@@ -1,0 +1,99 @@
+﻿@* Мессенджер - чат, переписка между пользователями*@
+@model AmplaApp.ViewModels.Messenger.MessengerViewModel
+@inject AmplaCore.Services.LocalizationService localizationService
+@inject AmplaApp.Services.ProfileService profileService
+@{
+    bool isMobile = AmplaApp.Utils.RequestUtils.CheckMobileDevice(Context.Request);
+    int currentProfileID = profileService.CurrentProfile != null ? profileService.CurrentProfile.ID : 0;
+    // Блок показывается только если пользователь авторизован.
+    if (currentProfileID == 0)
+    {
+        // TODO переход на авторизацию.
+        return;
+    }
+}
+
+
+
+<div class="profile-card student-card ">
+    <div class="profile-type-header-line student-type-header-line"></div>
+    <div class="container body-content ">
+        <div class="messenger" id="messenger">
+            <div class="messenger-left" v-show="visibleLeftPanel">
+                <div class="messenger-search">
+                    <input type="text" placeholder="Найти собеседника..." v-model="search"
+                           v-on:change="findChatgroups()" v-on:input="findChatgroups()" />
+                </div>
+                <div class="messenger-profile-list">
+                    <div v-for="chatgroup in chatgroupList" class="messenger-profile" 
+                         v-on:click="selectChatgroup(chatgroup)" v-bind:class="{selected:chatgroup.id==selectedChatgroupID}">
+                        <div class="image"><img v-bind:src="chatgroup.profile.imageLink" /></div>
+                        <div class="name-block">
+                            <div class="name">{{chatgroup.profile.name}}</div>
+                              <div class="text">{{chatgroup.lastText}}</div>
+
+                        </div>
+                        <div class="stat-block">
+                            <div class="time">{{chatgroup.lastTime}}</div>
+                            <div class="new-count" v-show="chatgroup.unreadMessageCount>0">
+                                {{chatgroup.unreadMessageCount}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="messenger-right" v-if="selectedProfile!=null">
+                <div >
+                    <div class="profile-info" >
+                        <a href="javascript:void(0);" class="back" v-on:click="back()"></a>
+                        <div class="image"><img v-bind:src="selectedProfile.imageLink" /></div>
+                        <div class="name-block">
+                            <div class="name">
+                                {{selectedProfile.name}}
+                            </div>
+                            <div class="text">Был в сети час назад</div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="messages">
+                        <div v-for="message in messages" class="message-item">
+                            <div class="message" v-bind:class="getMessageClass(message)">
+                                <div class="message-text">
+                                    {{message.text}}
+                                </div>
+                                <div class="message-time">
+                                    {{message.time}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="message-box">
+                        <div class="attach-icon"></div>
+                        <input type="text" v-model="messageText" v-on:change="changeMessageText()"
+                               v-on:keyup.enter="sendMessage"
+                               v-on:input="changeMessageText()" placeholder="Введите сообщение..." />
+                        <a class="send-btn" href="javascript:void(0);" v-on:click="sendMessage()"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+
+
+    <script type="text/javascript" src="/js/messenger.js@(AmplaApp.Utils.TextUtils.GetResourceVersion())"></script>
+    <script type="text/javascript">
+        messengerApp.init(@currentProfileID, @(isMobile?1:0),@(Model.ToID));
+    </script>
+
+    
+    
+    
+}

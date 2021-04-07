@@ -1,0 +1,73 @@
+﻿@* Добавление или редактирование отзыва на студента*@
+@{
+    int reviewID = AmplaApp.Utils.RequestUtils.GetInt(Context.Request, "reviewid");
+}
+@model AmplaApp.ViewModels.Profile.ProfileCardViewModel
+@inject AmplaCore.Services.LocalizationService localizationService
+@if (Model.IsOwner)
+{
+    <div class="edit-review" id="edit-review">
+        <div class="title">Ваша рекомендация студенту</div>
+        <div class="student" v-if="student!=null">
+            <div class="image">
+                <img v-bind:src="student.imageLink" />
+            </div>
+            <div class="name-box">
+                <div class="name">{{student.name}}</div>
+                <div class="university">{{student.universityName}}</div>
+            </div>
+        </div>
+
+
+        <div class="info">
+            <div class="review-icon">
+                <i></i>
+            </div>
+            <div class="text">
+                Пожалуйста выберите в каждом блоке по пять наиболее подходящих прилагательных
+            </div>
+        </div>
+
+        <div class="review-data">
+            <div class="review-data-title">
+                <i></i>
+                Черты характера
+            </div>
+
+            <div class="skill-block">
+                <div class="all-skills">
+                    <div v-for="skill in skillList" class="skill" v-on:click="selectSkill(skill)">
+                        {{skill.name}}
+                    </div>
+                </div>
+                <div class="result-skills">
+                    <div v-for="(skill,index) in reviewSkillList" class="item">
+                        <div class="index">{{index+1}}</div>
+                        <div class="name" v-if="skill.id>0">{{skill.name}}<i v-on:click="deleteSkill(skill)"></i></div>
+                        <div class="empty" v-if="skill.id==0" v-on:click="selectEmpty(index)">Выберите характеристику</div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="text">
+                <textarea placeholder="Можете добавить пару слов от себя..." v-model="comment"></textarea>
+
+            </div>
+            <div class="button-block">
+                <a href="javascript:void(0)" v-on:click="saveReview()" class="btn btn-orange waves-effect waves-light">Сохранить и продолжить</a>
+            </div>
+        </div>
+    </div>
+
+    @*JS код*@
+    <script type="text/javascript" src="/js/student.edit-review.js@(AmplaApp.Utils.TextUtils.GetResourceVersion())"></script>
+    <script type="text/javascript">
+    editReviewApp.init(@reviewID);
+    </script>
+}
+
+else
+
+{<div style="margin-top:90px;">@localizationService.GetValue("Access denied")</div>
+}

@@ -1,0 +1,603 @@
+/* Отзывы */
+.borderBox {
+  background: #ffffff;
+  border: 1px solid #e8e9eb;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.student-review-list {}
+
+.review-icon {
+  margin-right: 20px;
+  float: left;
+  width: 52px;
+
+  i {
+    width: 52px;
+    height: 46px;
+    display: block;
+    background-image: url("/css/review-icons.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+}
+
+.request-review-box {
+  .borderBox();
+
+  margin: 0 0 20px 0;
+  width: 711px;
+  padding: 15px 19px;
+
+  .request-review-2 {
+    float: left;
+    width: 420px;
+
+    .title {
+      color: #444444;
+      font-size: 17px;
+      line-height: 23px;
+      margin: 3px 0;
+    }
+
+    .text {
+      color: #828282;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  .request-review-3 {
+    float: right;
+    padding-top: 6px;
+
+    .btn {
+      margin: 0;
+      width: 162px;
+      border-radius: 5px !important;
+      height: 37px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      padding: 8px 20px;
+    }
+  }
+}
+
+.student-skill-item {
+  padding: 24px;
+
+  .borderBox();
+
+  width: 711px;
+  height: 383px;
+
+  .skill-title {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 27px;
+    color: #444444;
+    height: 28px;
+    display: flex;
+    align-items: center;
+
+    i {
+      width: 22px;
+      height: 28px;
+      display: block;
+      background-image: url("/css/review-icons.png");
+      background-position: -52px 0;
+      background-repeat: no-repeat;
+      float: left;
+      margin-right: 18px;
+    }
+  }
+
+  .skill-item {
+    height: 38px;
+    padding-left: 41px;
+    overflow: hidden;
+    margin-bottom: 11px;
+
+    .skill-item-name-block {
+      width: 163px;
+      height: 38px;
+      float: left;
+      padding: 2px 0;
+    }
+
+    .skill-item-name {
+      padding: 8px 16px;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+
+      text-align: center;
+      color: #444444;
+
+      background: #f6f6f6;
+      height: 34px;
+
+      border: 1px solid #f6f6f6;
+      box-sizing: border-box;
+      border-radius: 20px;
+      width: max-content;
+    }
+
+    .skill-item-line-block {
+      margin-left: 13px;
+      float: left;
+      width: 230px;
+
+      position: relative;
+    }
+
+    .skill-item-line-gray {
+      background: #e8e9eb;
+      margin-top: 17px;
+      border-radius: 7px;
+      height: 3px;
+      width: 100%;
+    }
+
+    .skill-item-line-orange {
+      position: absolute;
+      top: 14px;
+      left: 0;
+      background: #ff9e67;
+      border-radius: 7px;
+      height: 9px;
+      width: 100px;
+    }
+
+    .skill-item-count-block {
+      margin-left: 15px;
+      float: left;
+      width: 38px;
+      padding-top: 2px;
+    }
+
+    .skill-item-count {
+      width: 34px;
+      height: 34px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      background: #f6f6f6;
+      text-align: center;
+      padding: 7px 0;
+      color: #ea681f;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .skill-item-count-orange {
+      background: #fff4ee;
+      border: 1px solid #ea681f;
+    }
+
+    .skill-item-count-gray {}
+
+    .skill-item-images {
+      margin-left: 8px;
+      float: left;
+      width: 130px;
+      height: 38px;
+      position: relative;
+
+      .skill-item-image {
+        width: 38px;
+        height: 38px;
+        position: absolute;
+        border: 2px solid #ffffff;
+        border-radius: 17px;
+      }
+
+      .skill-item-image_1 {}
+
+      .skill-item-image_2 {
+        left: 24px;
+        z-index: 10;
+      }
+
+      .skill-item-image_3 {
+        left: 48px;
+        z-index: 20;
+      }
+
+      .skill-item-image_4 {
+        left: 72px;
+        z-index: 30;
+      }
+
+      .skill-item-image_5 {
+        left: 96px;
+        z-index: 40;
+      }
+    }
+  }
+}
+
+.student-review-item {
+  .borderBox();
+  padding: 16px 17px 20px 17px;
+  margin-bottom: 10px;
+
+  .review-author-block {
+    height: 44px;
+    margin-bottom: 16px;
+    overflow: hidden;
+
+    .author-image {
+      width: 54px;
+      float: left;
+
+      img {
+        border-radius: 22px;
+      }
+    }
+
+    .author-info {
+      .author-name {
+        font-size: 14px;
+        line-height: 19px;
+
+        color: #191919;
+
+        span {
+          font-size: 12px;
+          line-height: 16px;
+
+          color: #828282;
+        }
+
+        margin-bottom: 3px;
+      }
+
+      .author-date {
+        font-size: 12px;
+        line-height: 16px;
+
+        color: #828282;
+      }
+    }
+  }
+
+  .review-left {
+    width: 54px;
+    float: left;
+    min-height: 30px;
+    padding-top: 5px;
+    padding-right: 10px;
+
+    .profile-gray-icon {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0 auto;
+    }
+  }
+
+  .review-center {
+    width: 315px;
+    float: left;
+
+    .review-skill-item {
+      overflow: hidden;
+      margin-bottom: 10px;
+
+      .review-skill-index {
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        padding-top: 7px;
+        float: left;
+        margin-right: 5px;
+        background: #f6f6f6;
+        font-size: 13px;
+        line-height: 18px;
+        color: #ea681f;
+
+        border: 1px solid #f6f6f6;
+        box-sizing: border-box;
+        border-radius: 20px;
+      }
+
+      .review-skill-name {
+        float: left;
+        background: #ffffff;
+        height: 34px;
+        padding: 7px 20px;
+
+        border: 1px solid #d8dee7;
+        box-sizing: border-box;
+        border-radius: 20px;
+        color: #444444;
+        font-size: 13px;
+        line-height: 18px;
+        /* identical to box height */
+
+        text-align: center;
+      }
+    }
+  }
+
+  .review-right {
+    width: 296px;
+    padding-top: 8px;
+    float: right;
+    font-size: 13px;
+    line-height: 20px;
+    position: relative;
+
+    color: #444444;
+    padding-left: 33px;
+
+    i {
+      left: 0;
+      background-image: url('/css/review-icons.png');
+      width: 23px;
+      height: 18px;
+      background-position: -118px 0;
+      display: block;
+      position: absolute;
+
+
+    }
+  }
+}
+
+// Редактирование отзыва на студента.
+.edit-review {
+  margin-top: 90px;
+
+  .student {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    height: 76px;
+
+    padding: 16px;
+    margin: 20px 0;
+  }
+
+  .image {
+    width: 44px;
+    height: 44px;
+    float: left;
+
+    img {
+      border-radius: 22px;
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  .name-box {
+    float: left;
+    margin-left: 10px;
+    padding-top: 3px;
+    width: 400px;
+  }
+
+  .name {
+    font-size: 14px;
+    line-height: 19px;
+    color: #191919;
+  }
+
+  .university {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 3px;
+    color: #828282;
+  }
+
+  .title {
+    font-size: 17px;
+    line-height: 23px;
+    color: #444444;
+    margin-top: 30px;
+  }
+
+  .info {
+    background: #ffffff;
+    padding: 20px 16px;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    height: 80px;
+
+    .text {
+      font-size: 14px;
+      line-height: 19px;
+      height: 38px;
+      color: #444444;
+      display: flex;
+      align-items: center;
+    }
+
+    .review-icon {
+      margin-right: 16px;
+      width: 44px;
+
+      i {
+        width: 44px;
+        background-position: -74px 0;
+        height: 39px;
+      }
+    }
+  }
+
+  .review-data {
+    background: #ffffff;
+    padding: 24px;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    border-radius: 3px;
+    min-height: 493px;
+
+    .review-data-title {
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 27px;
+      color: #444444;
+      height: 28px;
+      display: flex;
+      align-items: center;
+
+      i {
+        width: 22px;
+        height: 28px;
+        display: block;
+        background-image: url("/css/review-icons.png");
+        background-position: -52px 0;
+        background-repeat: no-repeat;
+        float: left;
+        margin-right: 18px;
+      }
+    }
+
+    .skill-block {
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .all-skills {
+      width: 556px;
+      overflow: hidden;
+      float: left;
+
+      .skill {
+        background: #ffffff;
+        font-size: 13px;
+        line-height: 18px;
+        text-align: center;
+        color: #444444;
+        border: 1px solid #d8dee7;
+        box-sizing: border-box;
+        border-radius: 20px;
+        float: left;
+        padding: 7px 20px;
+        cursor: pointer;
+        margin: 0 5px 10px 0;
+      }
+
+      .skill:hover {
+        color: #ea681f;
+      }
+    }
+
+    .result-skills {
+      float: left;
+      width: 300px;
+
+      .item {
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        .name {
+          float: left;
+          background: #ffffff;
+          font-size: 13px;
+          line-height: 18px;
+          padding: 7px 36px 7px 18px;
+
+          text-align: center;
+
+          color: #444444;
+
+          border: 1px solid #ea681f;
+          box-sizing: border-box;
+          border-radius: 20px;
+          position: relative;
+
+          i {
+            width: 10px;
+            height: 9px;
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            display: block;
+
+            cursor: pointer;
+
+            background-image: url("/css/review-icons.png");
+            background-position: -52px -28px;
+            background-repeat: no-repeat;
+          }
+        }
+
+        .index {
+          float: left;
+          width: 34px;
+          height: 34px;
+          background: #ea681f;
+          border-radius: 20px;
+          color: #ffffff;
+          font-size: 13px;
+          line-height: 18px;
+          padding: 7px 0;
+          margin-right: 16px;
+
+          text-align: center;
+        }
+
+        .empty {
+          float: left;
+          background: #ffffff;
+
+          border: 1px dashed #ea681f;
+          font-size: 13px;
+          line-height: 18px;
+          cursor: pointer;
+          padding: 7px 18px 7px 18px;
+
+          text-align: center;
+          box-sizing: border-box;
+          border-radius: 20px;
+          color: #828282;
+        }
+      }
+
+      .item:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .text {
+      textarea {
+        width: 554px;
+        background: #f6f6f6;
+        border-radius: 5px;
+        border: none;
+        padding: 14px 15px;
+        color: #828282;
+        font-size: 13px;
+        line-height: 20px;
+      }
+    }
+
+    .button-block {
+      margin-top: 20px;
+
+      .btn {
+        margin: 0;
+        width: 218px;
+        border-radius: 5px !important;
+        height: 37px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        padding: 8px 18px;
+      }
+    }
+  }
+}
